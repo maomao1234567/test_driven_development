@@ -44,3 +44,11 @@ def test_two_currency_is_same():
     five_swiss_franc = SwissFranc(5)
 
     assert five_dollar != five_swiss_franc
+
+
+def test_currency_name():
+    five_dollar = Dollar(5)
+    five_swiss_franc = SwissFranc(5)
+
+    assert five_dollar.currency == 'USD'
+    assert five_swiss_franc.currency == 'CHF'
