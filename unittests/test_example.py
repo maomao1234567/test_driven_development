@@ -52,3 +52,17 @@ def test_currency_name():
 
     assert five_dollar.currency == 'USD'
     assert five_swiss_franc.currency == 'CHF'
+
+
+def test_the_same_money_add():
+    five_dollar = Dollar(5)
+    ten_dollar = Dollar(10)
+
+    assert five_dollar.plus(ten_dollar) == Dollar(15)
+
+
+def test_the_diff_money_add():
+    five_dollar = Dollar(5)
+    five_swiss_franc = SwissFranc(10)
+
+    assert five_dollar.plus(five_swiss_franc) == Dollar(10)
